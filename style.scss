@@ -19,10 +19,10 @@ input[type="checkbox"] {
     font-variant: normal;
     text-transform: none;
     line-height: 1;
-    --webkit-font-smoothing: antialiased;
-    width: 1em;
-    display: inline-block;
     margin-right: 5px;
+    display: inline-block;
+    width: 1em;
+    --webkit-font-smoothing: antialiased;
   }
 
   &:checked {
