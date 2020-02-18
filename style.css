@@ -12,23 +12,19 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"] + .label-text::before {
-  content: "\f096";
-  font-family: "FontAwesome";
-  speak-as: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  margin-right: 5px;
-  display: inline-block;
+  content: "";
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin-right: 0.5em;
+  background-image: url(./icons/checkbox-unchecked.svg);
   width: 1em;
-  --webkit-font-smoothing: antialiased;
+  height: 1em;
 }
 
 input[type="checkbox"]:checked + .label-text::before {
-  content: "\f14a";
-  color: #06a3e9;
+  content: "";
+  background-image: url(./icons/checkbox-checked.svg);
   -webkit-animation: tick 180ms ease-in;
           animation: tick 180ms ease-in;
 }
@@ -38,8 +34,8 @@ input[type="checkbox"]:disabled + .label-text {
 }
 
 input[type="checkbox"]:disabled + .label-text::before {
-  content: "\f0c8";
-  color: #ccc;
+  content: "";
+  background-image: url(./icons/checkbox-unchecked.svg);
 }
 
 @-webkit-keyframes tick {
