@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .cls-1, .checkbox-box {
+        fill: rgba(37,37,37,0.15);
+      }
+    </style>
+  </defs>
+  <g id="Group_4" data-name="Group 4" transform="translate(-65 -213)">
+    <rect id="Rectangle_2" data-name="Rectangle 2" class="cls-1" width="32" height="32" rx="2" transform="translate(65 213)"/>
+  </g>
+</svg>
