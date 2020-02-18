@@ -11,33 +11,34 @@ input[type="checkbox"] {
   display: none;
 
   + .label-text::before {
-    // content: "\f096";
-    // font-family: "FontAwesome";
-    // speak-as: none;
-    // font-style: normal;
-    // font-weight: normal;
-    // font-variant: normal;
-    // text-transform: none;
-    // line-height: 1;
-    // margin-right: 5px;
-    // display: inline-block;
-    // width: 1em;
-    // --webkit-font-smoothing: antialiased;
-    content: "";
-    display: inline-flex;
-    margin-right: 0.5em;
-    background-image: url(./icons/checkbox-unchecked.svg);
+    content: "\f096";
+    font-family: "FontAwesome";
+    speak-as: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    margin-right: 5px;
+    display: inline-block;
     width: 1em;
-    height: 1em;
+    --webkit-font-smoothing: antialiased;
+    // content: "";
+    // display: inline-block;
+    // margin-right: 0.5em;
+    // background-image: url(./icons/checkbox-unchecked.svg);
+    // width: 1em;
+    // height: 1em;
   }
 
   &:checked {
     + .label-text::before {
-      content: "";
-      background-image: url(./icons/checkbox-checked.svg);
-      // content: "\f14a";
-      // color: #06a3e9;
+      content: "\f14a";
+      color: #06a3e9;
       animation: tick 180ms ease-in;
+      // content: "";
+      // background-image: url(./icons/checkbox-checked.svg);
+      // animation: tick 180ms ease-in;
     }
   }
 
@@ -46,10 +47,10 @@ input[type="checkbox"] {
       color: #aaa;
 
       &::before {
-        // content: "\f0c8";
-        // color: #ccc;
-        content: "";
-        background-image: url(./icons/checkbox-unchecked.svg);
+        content: "\f0c8";
+        color: #ccc;
+        // content: "";
+        // background-image: url(./icons/checkbox-unchecked.svg);
       }
     }
   }
