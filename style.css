@@ -1,73 +1,57 @@
-body {
-  font-family: "Montserrat", sans-serif;
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-label {
-  cursor: pointer;
-  color: #666;
+body {
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  background: #f2f2f2;
+  font-family: "Montserrat";
+  font-weight: bold;
+  color: #0165e7;
+}
+
+.inner {
+  padding: 0.5em;
+  border: 0.3em;
+  width: 200px;
+  -webkit-box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.04), -7px -7px 5px rgba(255, 255, 255, 0.8);
+          box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.04), -7px -7px 5px rgba(255, 255, 255, 0.8);
+  border: 2px solid #ebebeb;
 }
 
 input[type="checkbox"] {
   display: none;
+  pointer-events: none;
 }
 
-input[type="checkbox"] + .label-text::before {
-  content: "\f096";
-  font-family: "FontAwesome";
-  speak-as: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  margin-right: 5px;
-  display: inline-block;
-  width: 1em;
-  --webkit-font-smoothing: antialiased;
+input[type="checkbox"] + label {
+  cursor: pointer;
+  font-size: 0.8em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 3fr;
+      grid-template-columns: auto 3fr;
 }
 
-input[type="checkbox"]:checked + .label-text::before {
-  content: "\f14a";
-  color: #06a3e9;
-  -webkit-animation: tick 180ms ease-in;
-          animation: tick 180ms ease-in;
+input[type="checkbox"] + label svg {
+  width: 2em;
+  stroke: #007ce2;
+  stroke-width: 8;
+  fill: white;
 }
 
-input[type="checkbox"]:disabled + .label-text {
-  color: #aaa;
+input[type="checkbox"] + label svg .box {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 0;
+  fill: white;
 }
 
-input[type="checkbox"]:disabled + .label-text::before {
-  content: "\f0c8";
-  color: #ccc;
-}
-
-@-webkit-keyframes tick {
-  0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-  }
-  80% {
-    -webkit-transform: scale(1.4);
-            transform: scale(1.4);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
-@keyframes tick {
-  0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-  }
-  80% {
-    -webkit-transform: scale(1.4);
-            transform: scale(1.4);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
+input[type="checkbox"] + label svg .check {
+  stroke-dasharray: 70;
+  stroke-dashoffset: 70;
+  fill: none;
 }
