@@ -68,54 +68,70 @@
 //   }
 // }
 
-* {
-  box-sizing: border-box;
+// .container {
+//   background-color: red;
+
+//   display: inline-block;
+//   position: relative;
+//   padding-left: 25px;
+//   user-select: none;
+//   font-size: 1rem;
+//   cursor: pointer;
+
+//   input[type="checkbox"] {
+//     position: absolute;
+//     opacity: 0;
+//     height: 0;
+//     width: 0;
+//     cursor: pointer;
+
+//     &:checked input ~ .checkmark {
+//       .checkmark {
+//         background-color: blue;
+//       }
+//     }
+//   }
+
+//   .checkmark {
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+//     width: 24px;
+//     height: 24px;
+//     border-radius: 2px;
+//     background-color: #666;
+//   }
+
+//   &:hover {
+//     .checkmark {
+//       background-color: #999;
+//     }
+//   }
+// }
+
+input[type="checkbox"],
+label {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
 }
 
-body {
-  height: 100vh;
-  display: grid;
-  place-content: center;
-  background: #f2f2f2;
-  font-family: "Montserrat";
-  font-weight: bold;
-  color: #0165e7;
-}
+label {
+  background-color: red;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
 
-.inner {
-  padding: 0.5em;
-  border: 0.3em;
-  width: 200px;
-  box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.04), -7px -7px 5px rgba(255, 255, 255, 0.8);
-  border: 2px solid rgb(235, 235, 235);
-}
+  input[type="checkbox"] {
+    display: none;
 
-input[type="checkbox"] {
-  display: none;
-  pointer-events: none;
-
-  & + label {
-    cursor: pointer;
-    font-size: 0.8em;
-    display: grid;
-    grid-template-columns: auto 3fr;
-
-    svg {
-      width: 2em;
-      stroke: rgb(0, 124, 226);
-      stroke-width: 8;
-      fill: white;
-
-      .box {
-        stroke-dasharray: 400;
-        stroke-dashoffset: 0;
-        fill: white;
-      }
-      .check {
-        stroke-dasharray: 70;
-        stroke-dashoffset: 70;
-        fill: none;
-      }
+    + .label-text::before {
+      content: "aaa";
+      width: 1rem;
+      height: 1rem;
+      border: solid 1px;
+      margin-right: 1rem;
     }
   }
 }

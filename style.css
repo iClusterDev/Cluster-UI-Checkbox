@@ -1,57 +1,30 @@
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+input[type="checkbox"],
+label {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
 }
 
-body {
-  height: 100vh;
-  display: -ms-grid;
-  display: grid;
-  place-content: center;
-  background: #f2f2f2;
-  font-family: "Montserrat";
-  font-weight: bold;
-  color: #0165e7;
-}
-
-.inner {
-  padding: 0.5em;
-  border: 0.3em;
-  width: 200px;
-  -webkit-box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.04), -7px -7px 5px rgba(255, 255, 255, 0.8);
-          box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.04), -7px -7px 5px rgba(255, 255, 255, 0.8);
-  border: 2px solid #ebebeb;
-}
-
-input[type="checkbox"] {
-  display: none;
-  pointer-events: none;
-}
-
-input[type="checkbox"] + label {
+label {
+  background-color: red;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
   cursor: pointer;
-  font-size: 0.8em;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: auto 3fr;
-      grid-template-columns: auto 3fr;
 }
 
-input[type="checkbox"] + label svg {
-  width: 2em;
-  stroke: #007ce2;
-  stroke-width: 8;
-  fill: white;
+label input[type="checkbox"] {
+  display: none;
 }
 
-input[type="checkbox"] + label svg .box {
-  stroke-dasharray: 400;
-  stroke-dashoffset: 0;
-  fill: white;
-}
-
-input[type="checkbox"] + label svg .check {
-  stroke-dasharray: 70;
-  stroke-dashoffset: 70;
-  fill: none;
+label input[type="checkbox"] + .label-text::before {
+  content: "aaa";
+  width: 1rem;
+  height: 1rem;
+  border: solid 1px;
+  margin-right: 1rem;
 }
