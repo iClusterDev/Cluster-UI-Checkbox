@@ -5,40 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="./style.css" />
     <title>Cluster Checkbox</title>
   </head>
   <body>
-    <label for="skate">
-      <input type="checkbox" name="skate" id="skate" />
-      <svg class="checkbox" viewBox="0 0 104 104">
-        <g data-name="checkbox-group" transform="translate(-63.5 -323.5)">
-          <path data-name="checkbox-path 2" class="checkbox-box" d="M266.984,608.995h100v100h-100Z" transform="translate(-201.484 -283.495)" />
-          <path data-name="checkbox-path 1" class="checkbox-mark" d="M250.416,595.916l27,27,44.242-44.242" transform="translate(-169.916 -225.171)" />
-        </g>
-      </svg>
-      <span class="label-text">Skate</span>
-    </label>
-    <label for="paint">
-      <input type="checkbox" name="paint" id="paint" />
-      <svg class="checkbox" viewBox="0 0 104 104">
-        <g data-name="checkbox-group" transform="translate(-63.5 -323.5)">
-          <path data-name="checkbox-path 2" class="checkbox-box" d="M266.984,608.995h100v100h-100Z" transform="translate(-201.484 -283.495)" />
-          <path data-name="checkbox-path 1" class="checkbox-mark" d="M250.416,595.916l27,27,44.242-44.242" transform="translate(-169.916 -225.171)" />
-        </g>
-      </svg>
-      <span class="label-text">Paint</span>
-    </label>
-    <label for="play">
-      <input type="checkbox" name="play" id="play" />
-      <svg class="checkbox" viewBox="0 0 104 104">
-        <g data-name="checkbox-group" transform="translate(-63.5 -323.5)">
-          <path data-name="checkbox-path 2" class="checkbox-box" d="M266.984,608.995h100v100h-100Z" transform="translate(-201.484 -283.495)" />
-          <path data-name="checkbox-path 1" class="checkbox-mark" d="M250.416,595.916l27,27,44.242-44.242" transform="translate(-169.916 -225.171)" />
-        </g>
-      </svg>
-      <span class="label-text">Play</span>
-    </label>
+    <form>
+      <label for="skate">
+        <input type="checkbox" name="skate" id="skate" />
+        <svg class="checkbox" viewBox="0 0 104 104" data-input="skate">
+          <g transform="translate(-63.5 -323.5)">
+            <path data-box="skate" class="checkbox-box" d="M266.984,608.995h100v100h-100Z" transform="translate(-201.484 -283.495)" />
+            <path data-mark="skate" class="checkbox-mark" d="M250.416,595.916l27,27,44.242-44.242" transform="translate(-169.916 -225.171)" />
+          </g>
+        </svg>
+        <span class="label-text">Skate</span>
+      </label>
+      <label for="paint">
+        <input type="checkbox" name="paint" id="paint" />
+        <svg class="checkbox" viewBox="0 0 104 104" data-input="paint">
+          <g transform="translate(-63.5 -323.5)">
+            <path data-box="paint" class="checkbox-box" d="M266.984,608.995h100v100h-100Z" transform="translate(-201.484 -283.495)" />
+            <path data-mark="paint" class="checkbox-mark" d="M250.416,595.916l27,27,44.242-44.242" transform="translate(-169.916 -225.171)" />
+          </g>
+        </svg>
+        <span class="label-text">Paint</span>
+      </label>
+      <label for="play">
+        <input type="checkbox" name="play" id="play" />
+        <svg class="checkbox" viewBox="0 0 104 104" data-input="play">
+          <g transform="translate(-63.5 -323.5)">
+            <path data-box="play" class="checkbox-box" d="M266.984,608.995h100v100h-100Z" transform="translate(-201.484 -283.495)" />
+            <path data-mark="play" class="checkbox-mark" d="M250.416,595.916l27,27,44.242-44.242" transform="translate(-169.916 -225.171)" />
+          </g>
+        </svg>
+        <span class="label-text">Play</span>
+      </label>
+    </form>
+
+    <script>
+      const checkboxes = document.querySelectorAll(".checkbox");
+      for (const checkbox of checkboxes) {
+        const label = document.querySelector(`label[for=${checkbox.dataset.input}]`);
+        label.addEventListener("click", () => {
+          const input = document.querySelector(`input[id="${checkbox.dataset.input}"]`);
+          const mark = document.querySelector(`path[data-mark="${checkbox.dataset.input}"]`);
+          if (input.checked) {
+            mark.classList.remove("reverse");
+          } else {
+            mark.classList.add("reverse");
+          }
+        });
+      }
+    </script>
   </body>
 </html>
