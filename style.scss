@@ -6,113 +6,6 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-// label {
-//   cursor: pointer;
-//   color: #666;
-// }
-
-// input[type="checkbox"] {
-//   display: none;
-
-//   + .label-text::before {
-//     content: "\f096";
-//     font-family: "FontAwesome";
-//     speak-as: none;
-//     font-style: normal;
-//     font-weight: normal;
-//     font-variant: normal;
-//     text-transform: none;
-//     line-height: 1;
-//     margin-right: 5px;
-//     display: inline-block;
-//     width: 1em;
-//     --webkit-font-smoothing: antialiased;
-//     // content: "";
-//     // display: inline-block;
-//     // margin-right: 0.5em;
-//     // background-image: url(./icons/checkbox-unchecked.svg);
-//     // width: 1em;
-//     // height: 1em;
-//   }
-
-//   &:checked {
-//     + .label-text::before {
-//       content: "\f14a";
-//       color: #06a3e9;
-//       animation: tick 180ms ease-in;
-//       // content: "";
-//       // background-image: url(./icons/checkbox-checked.svg);
-//       // animation: tick 180ms ease-in;
-//     }
-//   }
-
-//   &:disabled {
-//     + .label-text {
-//       color: #aaa;
-
-//       &::before {
-//         content: "\f0c8";
-//         color: #ccc;
-//         // content: "";
-//         // background-image: url(./icons/checkbox-unchecked.svg);
-//       }
-//     }
-//   }
-// }
-
-// @keyframes tick {
-//   0% {
-//     transform: scale(0);
-//   }
-//   80% {
-//     transform: scale(1.4);
-//   }
-//   100% {
-//     transform: scale(1);
-//   }
-// }
-
-// .container {
-//   background-color: red;
-
-//   display: inline-block;
-//   position: relative;
-//   padding-left: 25px;
-//   user-select: none;
-//   font-size: 1rem;
-//   cursor: pointer;
-
-//   input[type="checkbox"] {
-//     position: absolute;
-//     opacity: 0;
-//     height: 0;
-//     width: 0;
-//     cursor: pointer;
-
-//     &:checked input ~ .checkmark {
-//       .checkmark {
-//         background-color: blue;
-//       }
-//     }
-//   }
-
-//   .checkmark {
-//     position: absolute;
-//     left: 0;
-//     top: 0;
-//     width: 24px;
-//     height: 24px;
-//     border-radius: 2px;
-//     background-color: #666;
-//   }
-
-//   &:hover {
-//     .checkmark {
-//       background-color: #999;
-//     }
-//   }
-// }
-
 input[type="checkbox"],
 label {
   margin: 0;
@@ -120,15 +13,31 @@ label {
 }
 
 label {
+  margin-bottom: 1rem;
   line-height: 1;
   position: relative;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   user-select: none;
   cursor: pointer;
 
+  &:hover {
+    input[type="checkbox"] + svg.checkbox {
+      .checkbox-box {
+        fill: rgb(0, 0, 0);
+        fill-opacity: 0.05;
+      }
+    }
+  }
+
   input[type="checkbox"] {
     display: none;
+    &:checked + svg.checkbox {
+      .checkbox-mark {
+        stroke-dashoffset: 0;
+        transition: stroke-dashoffset 0.2s linear;
+      }
+    }
   }
 
   svg.checkbox {
@@ -145,12 +54,14 @@ label {
     }
 
     .checkbox-mark {
-      // display: none;
       stroke-linejoin: round;
+      stroke-dasharray: 120;
+      stroke-dashoffset: 120;
     }
   }
 
   span.label-text {
     font-size: small;
+    font-weight: bold;
   }
 }

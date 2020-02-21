@@ -14,11 +14,12 @@ label {
 }
 
 label {
+  margin-bottom: 1rem;
   line-height: 1;
   position: relative;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -29,8 +30,19 @@ label {
   cursor: pointer;
 }
 
+label:hover input[type="checkbox"] + svg.checkbox .checkbox-box {
+  fill: black;
+  fill-opacity: 0.05;
+}
+
 label input[type="checkbox"] {
   display: none;
+}
+
+label input[type="checkbox"]:checked + svg.checkbox .checkbox-mark {
+  stroke-dashoffset: 0;
+  -webkit-transition: stroke-dashoffset 0.2s linear;
+  transition: stroke-dashoffset 0.2s linear;
 }
 
 label svg.checkbox {
@@ -49,8 +61,11 @@ label svg.checkbox .checkbox-mark {
 
 label svg.checkbox .checkbox-mark {
   stroke-linejoin: round;
+  stroke-dasharray: 120;
+  stroke-dashoffset: 120;
 }
 
 label span.label-text {
   font-size: small;
+  font-weight: bold;
 }
